@@ -1,0 +1,263 @@
+@import "var.css";
+
+input[type="radio"] {
+  display: none
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--clr-secondary);
+}
+
+body, input {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+header {
+  text-align: center;
+  margin: 35px 0px;
+}
+
+main {
+  border-radius: 20px 20px 0px 0px;
+  padding: 2rem 1.5rem;
+  background: var(--clr-white);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--clr-dark-gray1);
+  position: relative;
+}
+
+h2 span {
+  position: absolute;
+  right: 0;
+  color: red;
+}
+
+label, .button{
+  display: inline-block;
+  padding: 5px 0;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  transition: 0.2s;
+  background: var(--clr-dark);
+  border: 3px solid var(--clr-dark);
+  font-size: var(--font-size);
+  color: var(--clr-light-gray2);
+  text-align: center;
+}
+
+label:hover, .button:hover, .button:focus {
+  background-color: var(--clr-secondary);
+  border-color: var(--clr-secondary);
+  color: var(--clr-dark);
+}
+
+.button {
+  background-color: var(--clr-primary);
+  color: var(--clr-dark);
+  width: 100%;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+input:checked + label {
+  background: var(--clr-primary);
+  color: var(--clr-dark);
+  border-color: var(--clr-primary);
+}
+
+.input-number {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input-number::before {
+  content: url(../images/icon-dollar.svg);
+  display: block;
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  z-index: 1;
+}
+
+.input-number.people::before {
+  content: url(../images/icon-person.svg);
+}
+
+.input-number > input {
+  transition: 0.1s;
+  border: 3px solid rgba(0, 0, 0, 0);
+  width: 100%;
+  padding: 5px 15px;
+  border: 3px solid var(--clr-light-gray2);
+  background: var(--clr-light-gray2);
+  font-size: var(--font-size);
+  border-radius: 5px;
+  text-align: right;
+  position: relative;
+  color:var(--clr-dark);
+}
+
+.input-number > input:hover,
+.input-number > input:focus {
+  border-color: var(--clr-primary);
+  outline: 0;
+}
+
+/* Remove the little buttons inside input*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[id="pcustom"]:checked + label + #div-custom {
+  display: block;
+}
+
+input[id="pcustom"]:checked + label + div > input {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: var(--font-size);
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid var(--clr-primary);
+  text-align: right;
+  background: var(--clr-light-gray2);
+  margin-bottom: 1rem;
+  outline: 0;
+}
+
+input[id="pcustom"]:checked + label {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.container > * {
+  flex-basis: Calc(50% - 0.5rem);
+}
+
+label:nth-of-type(odd) {
+  margin-right: 1rem;
+}
+
+#div-custom {
+  display: none;
+}
+
+.results {
+  background-color: var(--clr-dark);
+  padding: 1.5rem;
+  color: var(--clr-light-gray2);
+  border-radius: 20px;
+}
+
+.results > div{
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.results p {
+  flex-basis: 50%;
+  font-size: 1.1rem;
+}
+
+.results p span {
+  color: var(--clr-light-gray1);
+}
+
+.results .value {
+  font-size: var(--font-size);
+  text-align: right;
+}
+
+.attribution {
+  background-color: var(--clr-secondary);
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.attribution a {
+  text-decoration:underline;
+  color: hsl(228, 45%, 44%);
+}
+
+.error-border {
+  border-color: red !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+@media (min-width: 1000px) {
+  .container > * {
+    flex-basis: Calc(38% - 1.89rem)
+  }
+
+  label {
+    margin-right: 0 !important;
+  }
+
+  label:nth-of-type(2), label:nth-of-type(5) {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    width: 900px;
+    margin: auto;
+    border-radius: 20px;
+    justify-content: space-between;
+  }
+  main > * {
+    flex-basis: Calc(50% - 1rem);
+  }
+  .results {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    width: Calc(100% - 4rem);
+    border-color: var(--clr-primary);
+  }
+
+  .attribution {
+    flex-basis: 100%;
+  }
+}

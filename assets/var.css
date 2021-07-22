@@ -1,0 +1,17 @@
+:root {
+  --clr-primary: hsl(172, 67%, 45%);
+  --clr-secondary: hsl(173, 61%, 77%);
+  --clr-secondary: hsl(185, 41%, 84%);
+  
+  --clr-dark: hsl(183, 100%, 15%);
+  --clr-dark-gray1: hsl(186, 14%, 43%);
+  --clr-dark-gray2: hsl(184, 14%, 56%);
+  --clr-light-gray1: hsl(185, 41%, 84%);
+  --clr-light-gray2: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --font-size: 24px;
+  --font-family: 'Space Mono', verdana, monospace;
+  --font-weight-light: 400;
+  --font-weight-bold: 700;
+}
